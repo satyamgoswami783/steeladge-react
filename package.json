@@ -1,0 +1,38 @@
+{
+  "name": "steelage",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "predev": "npm run images:optimize",
+    "dev": "vite",
+    "prebuild": "npm run images:optimize",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint",
+    "next:dev": "next dev -H 0.0.0.0",
+    "next:build": "next build"
+  },
+  "dependencies": {
+    "framer-motion": "^13.1.0",
+    "lucide-react": "^1.31.0",
+    "next": "16.3.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-router-dom": "^7.18.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.1.2",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
+    "sharp": "^0.35.4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vite": "^8.3.4"
+  }
+}
