@@ -11,7 +11,7 @@ import { FAQSection } from "@/components/common/FAQSection";
 import { homeFAQs } from "@/data/faqs";
 import { usePageTitle } from "@/compat/usePageTitle";
 export default function HomePage() {
-    usePageTitle("Commercial Contractor Surrey BC | Steelage Construction", "Leading commercial contractor in Surrey BC & Vancouver. Steelage Construction specializes in commercial general contracting, tenant improvements, restaurant builds, daycare construction & medical clinic fit-outs.");
+    usePageTitle("Commercial Contractor Surrey BC | Steelage Construction", "Leading commercial contractor in Surrey BC & Vancouver. Steelage Construction specializes in tenant improvements, restaurant builds, and general contracting.");
     return (<>
       {/* 1. Hero: BUILT FOR BUSINESS. DESIGNED FOR WHAT'S NEXT */}
       <Hero />

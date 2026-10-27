@@ -33,14 +33,15 @@ async function createIco(pngBuffers) {
 async function run() {
   const rootDir = path.resolve(__dirname, '..');
   
-  // Use steelage-logo-white-bg.svg as the master vector logo source
-  // It contains the exact official 4 towers + STEELAGE CONSTRUCTION LTD with white background
+  // Use the authentic logo-badge.png (from WhatsApp client source) as the master source
+  const badgePath = path.join(rootDir, 'public/logo-badge.png');
+  const badgeBuffer = fs.readFileSync(badgePath);
   const svgPath = path.join(rootDir, 'public/steelage-logo-white-bg.svg');
-  const svgBuffer = fs.readFileSync(svgPath);
 
-  // Render high-res base PNG (512x512) with crisp supersampling
-  const base512 = await sharp(svgBuffer, { density: 300 })
-    .resize(512, 512, { fit: 'contain', background: { r: 255, g: 255, b: 255, alpha: 1 } })
+  // Render high-res base PNG (512x512) with clean white background and balanced padding
+  const base512 = await sharp(badgeBuffer)
+    .resize(460, 460, { fit: 'contain' })
+    .extend({ top: 26, bottom: 26, left: 26, right: 26, background: { r: 255, g: 255, b: 255, alpha: 1 } })
     .png()
     .toBuffer();
 
